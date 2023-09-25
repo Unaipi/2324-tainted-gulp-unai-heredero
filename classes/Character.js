@@ -13,27 +13,27 @@ export class Character {
 
     drinkEmAll(potions) {
         potions.forEach(potion => {
-            
+
 
 
 
             if (potion.name.includes("Potion")) {
-                
-                if (potion.name.includes("Health")) {                
+
+                if (potion.name.includes("Health")) {
                     this.health += potion.value;
-                    console.log(this.fullName+" drinks "+potion.name +" and gains "+potion.value+" of health." )
+                    console.log(this.fullName + " drinks " + potion.name + " and gains " + potion.value + " of health.")
                     console.log(this.health)
                     console.log(this.magick)
                     console.log(this.stamina)
-                } else if (potion.name.includes("Magicka")) {                 
+                } else if (potion.name.includes("Magicka")) {
                     this.magick += potion.value;
-                    console.log(this.fullName+" drinks "+potion.name +" and gains "+potion.value+" of magick." )
+                    console.log(this.fullName + " drinks " + potion.name + " and gains " + potion.value + " of magick.")
                     console.log(this.health)
                     console.log(this.magick)
                     console.log(this.stamina)
                 } else if (potion.name.includes("Stamina")) {
                     this.stamina += potion.value;
-                    console.log(this.fullName+" drinks "+potion.name +" and gains "+potion.value+" of stamina." )
+                    console.log(this.fullName + " drinks " + potion.name + " and gains " + potion.value + " of stamina.")
                     console.log(this.health)
                     console.log(this.magick)
                     console.log(this.stamina)
@@ -44,35 +44,35 @@ export class Character {
                     this.health += potion.value;
                     this.magick += potion.value;
                     this.stamina += potion.value;
-                }else {
-                   
+                } else {
+
                     this.health++;
                     this.magick++;
-                    this.stamina++; 
-                    console.log(this.fullName+" drinks "+potion.name +" and gains +1 in every stat" )
+                    this.stamina++;
+                    console.log(this.fullName + " drinks " + potion.name + " and gains +1 in every stat")
                     console.log(this.health)
                     console.log(this.magick)
                     console.log(this.stamina)
-                } 
+                }
 
-                
+
 
             } else if (potion.name.includes("Poison")) {
                 if (potion.name.includes("Health")) {
                     this.health -= potion.value;
-                    console.log(this.fullName+" drinks "+potion.name +" and loses "+potion.value+" of health." )
+                    console.log(this.fullName + " drinks " + potion.name + " and loses " + potion.value + " of health.")
                     console.log(this.health)
                     console.log(this.magick)
                     console.log(this.stamina)
                 } else if (potion.name.includes("Magicka")) {
                     this.magick -= potion.value;
-                    console.log(this.fullName+" drinks "+potion.name +" and loses "+potion.value+" of magick." )
+                    console.log(this.fullName + " drinks " + potion.name + " and loses " + potion.value + " of magick.")
                     console.log(this.health)
                     console.log(this.magick)
                     console.log(this.stamina)
                 } else if (potion.name.includes("Stamina")) {
                     this.stamina -= potion.value;
-                    console.log(this.fullName+" drinks "+potion.name +" and loses "+potion.value+" of stamina." )
+                    console.log(this.fullName + " drinks " + potion.name + " and loses " + potion.value + " of stamina.")
                     console.log(this.health)
                     console.log(this.magick)
                     console.log(this.stamina)
@@ -81,22 +81,22 @@ export class Character {
                     this.magick--;
                     this.stamina--;
                 }
-            } 
+            }
 
-            if(this.health <=0){
+            if (this.health <= 0) {
                 console.log("YOU DIED!")
                 return
-            }else if(this.magick <=0){
+            } else if (this.magick <= 0) {
                 console.log("NO MAGICK LEFT!")
                 return
-            }else if(this.stamina <= 0){
+            } else if (this.stamina <= 0) {
                 console.log("YOU CAN'T KEEP GOING. NO STAMINA!")
                 return
             }
             console.log("*********************************")
         });
 
-        
+
     }
-    
+
 }

@@ -1,5 +1,6 @@
 import {
-    getData,getData2
+    getData,
+    getData2
 } from "./service/service.js";
 import {
     Ingredients
@@ -24,14 +25,14 @@ const execute = async () => {
         const pouchIngredients = data2.players[0].pouch_red;
 
         const josephData = data2.players[0]
-        
+
         showIngredients(ingredients);
 
         const cauldron = new Cauldron(ingredients)
 
         let potions = [];
 
-        const potion1 = cauldron.createPotion("Bear Claws", "Bee",);
+        const potion1 = cauldron.createPotion("Bear Claws", "Bee", );
         showPotion(potion1);
 
         const potion2 = cauldron.createPotion("Chicken's Egg", "Chaurus Eggs");
@@ -40,7 +41,7 @@ const execute = async () => {
         const potion3 = cauldron.createPotion("Chaurus Eggs", "Bleeding Crown");
         showPotion(potion3);
 
-        const potion4 = cauldron.createPotion("Nightshade", "Ectoplasm");        
+        const potion4 = cauldron.createPotion("Nightshade", "Ectoplasm");
         showPotion(potion4);
 
         const potionBag = new PotionBag(potions);
@@ -55,12 +56,12 @@ const execute = async () => {
             josephData.magick,
             josephData.stamina,
         ];
-        
+
         const JOSEPH = Character.from(playerData, createdPotions);
         showCharacter(JOSEPH)
 
         JOSEPH.drinkEmAll(JOSEPH.potions)
-        
+
     } catch (error) {
         //ERRORRRRRR
         console.log(error.message)
@@ -109,6 +110,6 @@ const showCharacter = (character) => {
     console.log("Potion 1: " + character.potions[0].name);
 
     characterPotions.forEach((element, index) => {
-        console.log("Potion "+index+": "+element.name)
+        console.log("Potion " + index + ": " + element.name)
     });
 };
